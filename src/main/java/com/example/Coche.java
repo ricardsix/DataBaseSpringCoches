@@ -1,9 +1,8 @@
-package com.example.coches;
+package com.example;
 
-        import javax.persistence.Entity;
-        import javax.persistence.GeneratedValue;
-        import javax.persistence.GenerationType;
-        import javax.persistence.Id;
+        import com.example.Persona;
+
+        import javax.persistence.*;
 
 @Entity
 public class Coche {
@@ -15,6 +14,8 @@ public class Coche {
     private Integer matriculacion;
     private Integer precio;
     private String matricula;
+    @ManyToOne
+    private Persona propietario;
 
     public Long getId()
     {
@@ -64,6 +65,14 @@ public class Coche {
     {
         this.matricula = matricula;
     }
+    public Persona getPropietario()
+    {
+        return propietario;
+    }
+    public void setPropietario(Persona propietario)
+    {
+        this.propietario = propietario;
+    }
 
     @Override
     public String toString()
@@ -72,9 +81,10 @@ public class Coche {
                 "id=" + id +
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
-                ", matriculacion=" + matriculacion +
-                ", precio=" + precio +
+                ", matriculacion=" + matriculacion + '\'' +
+                ", precio=" + precio + '\'' +
                 ", matricula='" + matricula + '\'' +
+                ", propietario='" + propietario + '\'' +
                 '}';
     }
 }
