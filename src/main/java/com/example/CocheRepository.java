@@ -25,6 +25,8 @@ public interface CocheRepository extends JpaRepository<Coche,Long> {
 
     List<Coche> findByMarcaAndPrecio(String marca, Integer precio);
 
+    List<Coche> findByMatriculacion(Integer matriculacion);
+
     @Query("SELECT AVG (c.precio) FROM Coche c WHERE c.marca = :marca")
     Double findByMediaPrecioMarca(@Param("marca") String marca);
 
@@ -49,5 +51,6 @@ public interface CocheRepository extends JpaRepository<Coche,Long> {
     @Query("SELECT (coche.marca), AVG (coche.precio), MAX (coche.precio), MIN (coche.precio) FROM Coche coche GROUP BY coche.marca")
     List<Object[]> findByMaxMinMediaPrecioMarca();
 
-    @Query("SELECT (coche)")
+    @Query("SELECT (coche.matriculacion), COUNT (coche) FROM Coche coche GROUP BY coche.matriculacion")
+    List<Object[]> findByNumberMatriculacion();
 }

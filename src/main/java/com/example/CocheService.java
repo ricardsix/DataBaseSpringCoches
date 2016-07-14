@@ -17,6 +17,9 @@ public class CocheService
 
     public void testCoche(){
 
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> C R E A C I O N   D E   D A T O S");
+
         Persona ivan = personaRepository.findOne(1L);
         Persona dimple = personaRepository.findOne(2L);
         Persona noelia = personaRepository.findOne(3L);
@@ -113,98 +116,112 @@ public class CocheService
         coche9.setPropietario(ricard);
         cocheRepository.save(coche9);
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuya matriculacion es anterior al 1975");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuya matriculacion es anterior al 1975");
         System.out.println("");
         System.out.println(cocheRepository.findByMatriculacionLessThan(1975));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuya matriculacion es posterior al 1975");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuya matriculacion es posterior al 1975");
         System.out.println("");
         System.out.println(cocheRepository.findByMatriculacionGreaterThan(1975));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuya matriculacion esta entre 1970 y 1980");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuya matriculacion esta entre 1970 y 1980");
         System.out.println("");
         System.out.println(cocheRepository.findByMatriculacionBetween(1970 , 1980));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuyo precio este entre 3000 y 5000");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuyo precio este entre 3000 y 5000");
         System.out.println("");
         System.out.println(cocheRepository.findByPrecioBetween(3000 , 5000));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuya matricula corresponda a M-474757");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuya matricula corresponda a M-474757");
         System.out.println("");
         System.out.println(cocheRepository.findByMatricula("M-474757"));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches de la Marca Seat");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches de la Marca Seat");
         System.out.println("");
         System.out.println(cocheRepository.findByMarca("Seat"));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches de Marca y Modelo Renault Gordini");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches de Marca y Modelo Renault Gordini");
         System.out.println("");
         System.out.println(cocheRepository.findByMarcaAndModelo("Renault", "Gordini"));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Precio medio de los coches de la Marca Seat");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Precio medio de los coches de la Marca Seat");
         System.out.println("");
         System.out.println(cocheRepository.findByMediaPrecioMarca("Seat"));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches de la Marca Renault que valen 2000");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches de la Marca Renault que valen 2000");
         System.out.println("");
         System.out.println(cocheRepository.findByMarcaAndPrecio("Renault", 2000));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches de Marca y Modelo Renault Gordini que valen 7500");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches de Marca y Modelo Renault Gordini que valen 7500");
         System.out.println("");
         System.out.println(cocheRepository.findByMarcaAndModeloAndPrecio("Renault", "Gordini", 7500));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("================================================================================================================================================================================================================================================================");
         System.out.println("Mostramos todos los coches cuyo propietario sea Ricard");
         System.out.println("");
         System.out.println(cocheRepository.findByPropietario(ricard));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuyo propietario sea Ricard y valen menos de 3000");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuyo propietario sea Ricard y valen menos de 3000");
         System.out.println("");
         System.out.println(cocheRepository.findByPropietarioAndPrecioLessThan(ricard, 3000));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuyo propietario sea Ricard y esten matriculados entre el 1970 y el 1980");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuyo propietario sea Ricard y esten matriculados entre el 1970 y el 1980");
         System.out.println("");
         System.out.println(cocheRepository.findByPropietarioAndMatriculacionBetween(ricard, 1970, 1980));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuyos propietarios tengan mas de 25 años");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuyos propietarios tengan mas de 25 años");
         System.out.println("");
         System.out.println(cocheRepository.findByPropietarioAndEdadMore(25));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuyos propietarios tengan mas de 25 años y menos de 26 años");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuyos propietarios tengan mas de 25 años y menos de 26 años");
         System.out.println("");
         System.out.println(cocheRepository.findByPropietarioAndEdadMaxMin(25,26));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos todos los coches cuyas matriculas contengan B");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos todos los coches cuyas matriculas contengan B");
         System.out.println("");
         System.out.println(cocheRepository.findByMatriculaContains("B"));
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mostramos el MAXIMO / MINIMO / MEDIA de los precios de los coches por marca");
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos el MAXIMO / MINIMO / MEDIA de los precios de los coches por marca");
         System.out.println("");
         List<Object[]> findByMaxMinMediaPrecioMarcaList = cocheRepository.findByMaxMinMediaPrecioMarca();
         {
             for (Object[] findByMaxMinMediaPrecioMarca : findByMaxMinMediaPrecioMarcaList)
             {
+                System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                 System.out.println("marca: " + findByMaxMinMediaPrecioMarca[0]);
                 System.out.println("media: " + findByMaxMinMediaPrecioMarca[1]);
                 System.out.println("max: " + findByMaxMinMediaPrecioMarca[2]);
                 System.out.println("min: " + findByMaxMinMediaPrecioMarca[3]);
             }
         }
+        System.out.println("================================================================================================================================================================================================================================================================");
+        System.out.println("> Mostramos el numero de coches cuya matriculacion corresponde a los años:");
+        System.out.println("");
+        List<Object[]> findByNumberMatriculacionList = cocheRepository.findByNumberMatriculacion();
+        for (Object[] findByNumberMatriculacion : findByNumberMatriculacionList)//(int i=1960; i<1990; i++)
+        {
+            Integer año = (Integer)findByNumberMatriculacion[0];
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println("año: " + año);
+            System.out.println("total: " + findByNumberMatriculacion[1]);
+            System.out.println("Listado de coches: " + cocheRepository.findByMatriculacion(año));
+        }
+        System.out.println("================================================================================================================================================================================================================================================================");
     }
 }
